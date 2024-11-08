@@ -1,13 +1,13 @@
 #pragma once
 
+#include <iostream>
+
 using namespace std;
 
 template <typename T>
-class List
-{
+class List {
 private:
-    struct Node
-    {
+    struct Node {
         T data;
         Node* next;
 
@@ -20,6 +20,10 @@ private:
 public:
     List();
     ~List();
+
+    List(const List<T>& other);         
+    List<T>& operator = (const List<T>& other); 
+
     void clear();
     void addTail(const T& data);
     void removeTail();
